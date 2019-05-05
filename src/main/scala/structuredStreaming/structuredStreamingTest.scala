@@ -30,7 +30,7 @@ object structureStreamingTest {
     val wordCounts = words.groupBy("value").count()
 
     val query = wordCounts.writeStream
-      .outputMode("complete")
+      .outputMode("append")
       .format("console")
       .start()
 
